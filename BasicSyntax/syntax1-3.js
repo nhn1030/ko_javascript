@@ -27,7 +27,7 @@ var는 javascript의 과거부터 사용된 변수 선언 키워드로, var로 �
 var x = 2;
 console.log(x); // = 2
 
-// var 예제 2 - 함수 스코프를 가지는 var
+// var 예제 2 - 함수 스코프를 가지는 var + 중복선언
 
 if (true) {
     var x = 5;
@@ -37,9 +37,12 @@ var x = 10;
 
 console.log(x); // = 10 x는 var를 이용하여 선언되었기때문에 함수 스코프를 가짐, var 선언의 특성 상, if 문 외부에서도 변수에 접근이 가능하여 변수 x 중복으로 선언 후 초기 값으로 10을 할당함
 
+// var 예제 3 - 호이스팅
 
+console.log(x); // = undefined
 
+var x = 5;
 
-
+console.log(x); // = 5
 
 
