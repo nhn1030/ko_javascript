@@ -28,7 +28,7 @@ var는 javascript의 과거부터 사용된 변수 선언 키워드로, var로 �
 var x = 2;
 console.log(x); // = 2
 
-// var 예제 2 - 함수 스코프를 가지는 var + 중복선언
+// var 예제 2 - 함수 스코프 선언
 
 if (true) {
     var x = 5;
@@ -83,3 +83,33 @@ function blockScope() {
 
 let x = 5;
 console.log(x);
+
+// let 예제 2 - 블록 스코프 선언
+
+function blockScope() {
+    if (true) { 
+        let x = 5;
+        console.log(x);
+    }
+    console.log(x); // = ReferenceError 오류 : let으로 선언된 x는 블록 외부에서 참조할 수 없음.
+}
+
+// let 예제 3 - 호이스팅
+
+console.log(x); // ReferenceError: x is no defined
+let x = 10;
+console.log(x); // = 5
+
+
+/* const로 선언하기
+
+const 역시 ECMA2015(ES6)에서 도입된 블록 스코프 변수 선언 키워드이다. const로 선언된 변수는 상수(constant)로 간주되어 재할당이 불가능하다.
+또, const는 선언과 동시에 값을 해야한다. 선언 이후에 재할당이 불가능하기 때문에 반드시 초기화가 필요하다.
+
+*/
+
+// const 예제 1 - 상수 선언, 재할당
+
+const PI = 3.14;
+PI = 3.14159 // TypeError: Assignment to constant variable
+
