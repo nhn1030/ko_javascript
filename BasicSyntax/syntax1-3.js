@@ -24,6 +24,7 @@ var는 javascript의 과거부터 사용된 변수 선언 키워드로, var로 �
 */
 
 // var 예제 1 - var를 이용한 변수 선언과 값 할당
+
 var x = 2;
 console.log(x); // = 2
 
@@ -35,7 +36,8 @@ if (true) {
 
 var x = 10;
 
-console.log(x); // = 10 x는 var를 이용하여 선언되었기때문에 함수 스코프를 가짐, var 선언의 특성 상, if 문 외부에서도 변수에 접근이 가능하여 변수 x 중복으로 선언 후 초기 값으로 10을 할당함
+console.log(x); // = 10 
+// 설명 : x는 var를 이용하여 선언되었기때문에 함수 스코프를 가짐, var 선언의 특성 상, if 문 외부에서도 변수에 접근이 가능하여 변수 x 중복으로 선언 후 초기 값으로 10을 할당함
 
 // var 예제 3 - 호이스팅
 
@@ -46,3 +48,38 @@ var x = 5;
 console.log(x); // = 5
 
 
+/* let으로 선언하기
+
+let은 const와 함께 ECMA2015(ES6)에서 도입된 변수 선언 키워드이다. 이는 var와는 다르게 블록 스코프를 가지는 것으로 이해하면 된다.
+
+그렇다면, 함수 스코프를 가지는 것과 블록 스코프를 가지는 것의 차이는 무엇인지 간단하게 짚고 넘어가자.
+
+*/
+
+
+// 함수 스코프 예시
+
+function functionScope() {
+    var y = 5;
+    if (true) {
+        var y = 20;
+        console.log(y);
+    }
+    console.log(y);
+}
+
+
+// 블록 스코프 예시
+
+function blockScope() {
+    if (true) {
+        let x = 5;
+        console.log(x); // = 5
+    }
+    console.log(x); // = ReferenceError 오류 : x는 블록 외부에서 참조할 수 없음.
+}
+
+// let 예제 1 - let을 이용한 변수 선언과 할당
+
+let x = 5;
+console.log(x);
